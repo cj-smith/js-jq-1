@@ -14,7 +14,7 @@
         width:50%;
       }
 
-      .idle{
+      .idle {
         background-color:lightgray;
       }
 
@@ -66,6 +66,13 @@
         });
 
         // attach an event listener to the Clear button here
+        // use an attribute selector to pick the right button
+        $('input[value="Clear"]').click( function(){ 
+          console.log('Caught a "Clear" click event.');
+          $("#output_area").removeClass('selected');
+          // alert("The looping function should go here.");
+          $("#output_area").html("<p>Click the 'Run Script' button again.  If you dare...</p>")
+             });
 
       }); // end of $(document).ready
 
@@ -118,7 +125,7 @@
  
     <h2>Output area:</h2>
     <div id="output_area" class="idle">
-      <p>This is the area where the output goes. This content appears before the script is run.</p>
+      <p>Click the 'Run Script' button.</p>
     </div>
   </body>
 </html>
