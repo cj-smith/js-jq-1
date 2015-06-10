@@ -21,6 +21,7 @@
       .selected {
         background-color: gold;
       }
+
       input[type="button"]  {
         border: 1px solid grey;
         width: 100px;
@@ -55,10 +56,13 @@
 
         // attach an event listener to the Run Script button
         // use an attribute selector to pick the right button
-        $('input[value="Run Script"]').click( function(){
+        $('input[value="Run Script"]').click( function(){ 
+        //"input" is an element; "Run Script" is the value attribute; this is a css-style selector; we are looking for any element that has the value attribute of "Run Script"
+        // "click" is the method being called
           console.log('Caught a "Run Script" click event.');
           $("#output_area").addClass( 'selected');
-          alert("The looping function should go here.");
+          // alert("The looping function should go here.");
+          loop_and_display();
         });
 
         // attach an event listener to the Clear button here
@@ -80,6 +84,7 @@
         output_html += "<p>The script is done.</p>";
         $("#output_area").html(output_html);
       }
+
     </script>
   </head>
   <body>
@@ -88,21 +93,21 @@
     <h2>Quiz</h2>
     <dl>
       <dt>What is an 'event listener'?</dt>
-      <dd>(put your answer here)</dd>
+      <dd>A way of attaching one or more functions to an event in the browser so that the function will be called when the user takes a certain action.</dd>
       <dt>How do you attach an event listener that responds to a 'click' event to an element using jQuery?</dt>
-      <dd>(put your answer here)</dd>
+      <dd>$('element').click('function')</dd>
       <dt>What is the ID of the place where the output of the loop function should go?</dt>
-      <dd>(put your answer here)</dd>
+      <dd>output_area</dd>
       <dt>What is the class that changes the style of the output area?</dt>
-      <dd>(put your answer here)</dd>
+      <dd>selected</dd>
       <dt>What does the selector input[value="Run Script"] do? Enter the URLs of the places you researched with your explanation.</dt>
-      <dd>(put your answer here)</dd>
+      <dd>Selects any element that has the value attribute of "Run Script."</dd>
       <dt>What is the URL of the documentation for the jQuery <kbd>.addClass</kbd> method?</dt>
-      <dd>(put your answer here)</dd>
+      <dd>https://api.jquery.com/addClass/</dd>
       <dt>What is the URL of the documentation for GitHub Pages? What does creating the <kbd>gh-pages</kbd> branch do on github.com</dt>
-      <dd>(put your answer here)</dd>
+      <dd>https://help.github.com/categories/github-pages-basics/ </dd> <dd>The gh-pages branch allows you to publish your website to the interwebs.</dd>
       <dt>What is the URL of the documentation for the <kbd>$(document).ready()</kbd> jQuery method?</dt>
-      <dd>(put your answer here)</dd>
+      <dd>https://api.jquery.com/ready/</dd>
  
     </dl>
  
