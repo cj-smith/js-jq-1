@@ -80,17 +80,15 @@
         This function prepares a string variable with HTML and then uses jQuery
         to load the variable contents into the DOM.
       */
-      function loop_and_display() {
-        var output_html;
-        var count = 0;
-        output_html="<p>The script is starting...</p>";
-        while (count<10) {
-          output_html= output_html + "Times this loop has run: "+ count +"<br />";
-          count++;
-        }
-        output_html += "<p>The script is done.</p>";
-        $("#output_area").html(output_html);
-      }
+	    function loop_and_display() {
+	        var output_html;	        
+	        output_html="<p>The script is starting...</p>";
+	        for (var count = 0; count<10; count++) {
+	          output_html= output_html + "Times this loop has run: "+ count +"<br />";
+	        }
+	        output_html += "<p>The script is done.</p>";
+	        $("#output_area").html(output_html);
+	      }
 
     </script>
   </head>
@@ -104,9 +102,9 @@
       <dt>How do you attach an event listener that responds to a 'click' event to an element using jQuery?</dt>
       <dd>$('element').click('function')</dd>
       <dt>What is the ID of the place where the output of the loop function should go?</dt>
-      <dd>output_area</dd>
+      <dd>#output_area</dd>
       <dt>What is the class that changes the style of the output area?</dt>
-      <dd>selected</dd>
+      <dd>.selected</dd>
       <dt>What does the selector input[value="Run Script"] do? Enter the URLs of the places you researched with your explanation.</dt>
       <dd>Selects any element that has the value attribute of "Run Script."</dd>
       <dt>What is the URL of the documentation for the jQuery <kbd>.addClass</kbd> method?</dt>
